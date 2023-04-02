@@ -1,0 +1,144 @@
+/*globel ＊{}為全域選擇器，可選擇所有html所有的標籤*/
+/*boxsizing讓盒模型為以邊界為準的盒模型，
+長寬高設定多少數值，會在介面上反應一至，不需要重算一次*/
+* {
+    box-sizing: border-box;
+    /*border為方便切版檢視觀看*/
+    /*border: 1px solid #000*/
+}
+
+a {
+    /*下面指令為取消超連結原設定標示顏色*/
+    text-decoration: none;
+    /*outline: none;*/
+    color: #000000;
+}
+
+/*html body height100%代表高度撐滿整版面*/
+html,
+body {
+    height: 100%;
+}
+
+.wrapper {
+    /*wrapper 100%參考對象為body*/
+    height: 100%;
+    background: rgb(255,242,213);
+    background: linear-gradient(90deg, rgba(255,242,213,1) 0%, rgba(255,228,170,1) 47%, rgba(255,180,134,1) 100%);
+    /*解決margin塌陷問題*/
+    overflow: hidden;
+}
+
+/*卡片設定*/
+.product {
+    width: 800px;
+    height: 500px;
+    background-color: #2b2861;
+    /*水平置中 主要用display margin去完成（注意：div本身就是display block的設定）
+首要條件：
+1.元件要display block
+2.要有寬度值設定
+3.margin 水平方向 auto
+*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin top數值越大，卡片推越下面*/
+    margin-top: 70px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/*注意此處因為inline-block並排後會產生有4px間距，
+所以需要><div做換行，然後標籤標示需要加空格*/
+.product .info {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    /* padding 左右間距 上下間距*/
+    padding: 45px 50px;
+    /*background-color: rgb(255, 255, 255);*/
+    height: 100%;
+}
+
+.product .image {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: 100%;
+    /*超過的圖片會被裁切*/
+    overflow: hidden;
+    border-radius: 0 10px 10px 0;
+}
+
+.product .image img {
+    height: 100%;
+    display: block;
+    margin: auto;
+}
+
+.product .name {
+    font-size: 60pt;
+    font-weight: 500;
+    font-family: sans-serif;
+    color: #ffffff;
+    /*white space文字不斷行*/
+    white-space: nowrap;
+    /*margin bottom 向下推擠*/
+    margin-bottom: 1px;
+    text-shadow: 0 48px 10px rgba(0, 0, 0, 0.05);
+    /*定位元素與層級設定*/
+    position: relative;
+    z-index: 10px;
+}
+.product .name2{
+    font-size: 30pt;
+    font-weight: 500;
+    font-family: sans-serif;
+    color: #ff7171;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    text-shadow: 0 48px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 10px;
+}
+
+
+.product .price {
+    font-size: 20px;
+    font-weight: 100px;
+    font-family: sans-serif;
+    color: #ff834e;
+    margin-bottom: 16px;
+}
+
+.product .des {
+    font-size: 15px;
+    letter-spacing: 2px;
+    line-height: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    color: #fff59d;
+    margin-bottom: 25px;
+}
+
+.product .btn {
+    font-family: sans-serif;
+    display: inline-block;
+    padding: 5px 30px;
+    line-height: 24px;
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: 4px;
+    color: #ffffff;
+    border-radius: 10px;
+    /*漸層色參考網址 CSS gradiant*/
+    background: rgb(255, 169, 89);
+    border: 0px;
+    box-shadow: 0px 10px 30px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+h1,h2,h3,p {
+    margin: 0;
+}
